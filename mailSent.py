@@ -82,10 +82,10 @@ total_child_divs = len(child_divs)
 
 start_time = time.time()
 
-hour = 8
+hour = 2160
 
 
-seconds = hour*4200
+seconds = hour*3600
 
 while True:
     current_time = time.time()
