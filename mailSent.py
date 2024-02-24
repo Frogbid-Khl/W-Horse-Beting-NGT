@@ -9,6 +9,10 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import ssl
+import sys
+from win10toast import ToastNotifier
+
+toaster = ToastNotifier()
 
 # Set Chrome options to run in headless mode
 chrome_options = webdriver.ChromeOptions()
@@ -63,6 +67,8 @@ except selenium.common.exceptions.WebDriverException as e:
             server.sendmail(sender_email, email, message.as_string())
 
     print("Email sent successfully!")
+    toaster.show_toast("HKJC Python", "Python Stop. Please Run it Quickly or Clifton Will be very angry!")
+    sys.exit()
 
 
 # Create a BeautifulSoup object and specify the parser
@@ -123,6 +129,8 @@ while True:
                     server.sendmail(sender_email, email, message.as_string())
 
             print("Email sent successfully!")
+            toaster.show_toast("HKJC Python", "Python Stop. Please Run it Quickly or Clifton Will be very angry!")
+            sys.exit()
 
         i = 1
         for data in rows:
@@ -173,6 +181,8 @@ while True:
                         server.sendmail(sender_email, email, message.as_string())
 
                 print("Email sent successfully!")
+                toaster.show_toast("HKJC Python", "Python Stop. Please Run it Quickly or Clifton Will be very angry!")
+                sys.exit()
 
             try:
                 response = session.get(url, headers=headers)
@@ -211,6 +221,8 @@ while True:
                         server.sendmail(sender_email, email, message.as_string())
 
                 print("Email sent successfully!")
+                toaster.show_toast("HKJC Python", "Python Stop. Please Run it Quickly or Clifton Will be very angry!")
+                sys.exit()
 
             x = x + 1
 
